@@ -1,0 +1,44 @@
+{
+    "resolution": "1920x1080",
+    "timeOffsetToOpenAndCloseChestModal": 5,
+    "clickOffsetToRequest": 3,
+    "mouseTravellingInterval": 0.4,
+    "workTimeInSec": 300,
+    "restTimeInSec": 600,
+    
+    "1920x1080": {
+        "openChestModalCoord": {
+            "x": 1409,
+            "y": 193
+        },
+        "closeChestModalCoord":{
+            "x": 1286,
+            "y": 294
+        },
+        "treasureHuntModeCoord": {
+            "x": 966,
+            "y": 484
+        },
+        "heroesButtonCoord": {
+            "x": 1470,
+            "y": 817
+        },
+        "workAllHeroesCoord": {
+            "x": 854,
+            "y": 346
+        },
+        "restAllHeroesCoord": {
+            "x": 928,
+            "y": 346
+        },
+        "closeHeroesModalCoord": {
+            "x": 1021,
+            "y": 284
+        },
+        "goBackwardButtonCood": {
+            "x": 409,
+            "y": 187
+        }
+    }
+    
+}
