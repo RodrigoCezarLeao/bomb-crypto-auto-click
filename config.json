@@ -39,6 +39,40 @@
             "x": 409,
             "y": 187
         }
+    },
+    "1366x768": {
+        "openChestModalCoord": {
+            "x": 1047,
+            "y": 143
+        },
+        "closeChestModalCoord":{
+            "x": 943,
+            "y": 221
+        },
+        "treasureHuntModeCoord": {
+            "x": 698,
+            "y": 400
+        },
+        "heroesButtonCoord": {
+            "x": 1086,
+            "y": 642
+        },
+        "workAllHeroesCoord": {
+            "x": 595,
+            "y": 269
+        },
+        "restAllHeroesCoord": {
+            "x": 665,
+            "y": 270
+        },
+        "closeHeroesModalCoord": {
+            "x": 733,
+            "y": 223
+        },
+        "goBackwardButtonCood": {
+            "x": 239,
+            "y": 140
+        }
     }
     
 }
