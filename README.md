@@ -24,7 +24,7 @@ Script, desenvolvido em python, utilizado para coordenar cliques do mouse de aco
 
 4) Download dos arquivos do script:
   - Acessar o link do repositório: https://github.com/RodrigoCezarLeao/bomb-crypto-auto-click
-  - Baixar arquivos zipados do repositório: ![](/imgs/pre-requisitos-5.jpg)
+  - Baixar arquivos zipados do repositório: ![](/imgs/pre-requisitos-8.jpg)
   - Extrair arquivos e colocar em sua pasta de preferências (Ex: Documentos, Área de Trabalho, C:/, etc.)
 
 5) Instalar requirements do python:
