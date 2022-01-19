@@ -42,5 +42,5 @@ Script, desenvolvido em python, utilizado para coordenar cliques do mouse de aco
 4) Deixar a aba do jogo aberta **(com o jogo já logado)**
 5) Observar os logs aparecendo no terminal (duração das execuções de trabalho e descanso dos heróis)
   
-  
+  ![](/imgs/bot-rodando.gif)
   
