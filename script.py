@@ -6,9 +6,20 @@ import pyautogui as pt
 from time import sleep, time, gmtime
 from threading import Timer
 from os import system
+import sys
+
+#resolution = sys.argv[1]
 
 fp = open('config.json')
 config = json.load(fp)
+#config["resolution"] = resolution
+resolution = config["resolution"]
+
+#mode = 1 (AutoFarm) | mode = 2 (Keep game opened)
+mode = config["mode"]
+
+if(resolution not in config["options"]):
+    raise Exception("Opção de resolução não cadastrada")
 
 def allToDO(mode):
     #mode = 1 (WORK) | mode = 2 (REST)
@@ -90,23 +101,27 @@ def printInfo(actionCode, timeDoing, totalTime, cont):
         print(f"Modo Trabalho ({jobPercentage}%)")        
         timeDoingObj = gmtime(timeDoing)
         totalTimeObj = gmtime(totalTime)        
-        print(f"Tempo = {timeDoingObj.tm_min}:{timeDoingObj.tm_sec} / {totalTimeObj.tm_min}:{totalTimeObj.tm_sec}")
+        print(f"Tempo = {timeDoingObj.tm_min:02d}:{timeDoingObj.tm_sec:02d} / {totalTimeObj.tm_min:02d}:{totalTimeObj.tm_sec:02d}")
     if(actionCode == 2):
         #Resting
         jobPercentage = round((timeDoing / totalTime) * 100, 2)
         print(f"Modo Descanso ({jobPercentage}%)")
         timeDoingObj = gmtime(timeDoing)
         totalTimeObj = gmtime(totalTime)
-        print(f"Tempo = {timeDoingObj.tm_min}:{timeDoingObj.tm_sec} / {totalTimeObj.tm_min}:{totalTimeObj.tm_sec}")
+        print(f"Tempo = {timeDoingObj.tm_min:02d}:{timeDoingObj.tm_sec:02d} / {totalTimeObj.tm_min:02d}:{totalTimeObj.tm_sec:02d}")
     if(actionCode == 3):
         #Heroes to Work
         print("Acordar Heroes (Hora de Trabalhar!)")
     if(actionCode == 4):
         #Heroes to Rest
         print("Descansar Heroes (Hora de Dormir!)")
+    if(actionCode == 5):
+        #Keep Game Opened
+        timeDoingObj = gmtime(timeDoing)
+        print(f"Mantendo o Jogo Aberto por {(timeDoingObj.tm_yday - 1):02d}:{timeDoingObj.tm_hour:02d}:{timeDoingObj.tm_min:02d}:{timeDoingObj.tm_sec:02d}")
 
 
-def hub(cont):        
+def hubAutoFarm(cont):        
     workTimeInSec = config["workTimeInSec"]
     restTimeInSec = config["restTimeInSec"]
     
@@ -142,6 +157,20 @@ def hub(cont):
     return cont
 
 
+def hubKeepGameOpened(t0, cont):    
+    while(True):
+        cont += 1
+        printInfo(5, time() - t0, None, cont)
+        keepMapOpened()
+
+    return cont           
+
+    
+
+t0 = time()
 cont = 0
 while(True):
-    cont = hub(cont)
+    if (mode == 1):
+        cont = hubAutoFarm(cont)
+    elif (mode == 2):
+        cont = hubKeepGameOpened(t0, cont)

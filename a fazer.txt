@@ -1,0 +1,19 @@
+bat p facilitar iniciação do macro
+add opção de deixar só o macro aberto
+formatar numeros de horas para 2 casas
+__________________________________________
+
+expandir o macro p logar no jogo sozinho
+	executar um .exe no windows:
+	
+	import os
+	os.system(path)
+	os.system(r'"C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"')
+
+
+	abrir webbrowser (https://docs.python.org/3/library/webbrowser.html):
+	import webbrowser
+	webbrowser.open(url, new=1)
+
+
+relatório às 00:00 salvando qntd bcoin num arquivo

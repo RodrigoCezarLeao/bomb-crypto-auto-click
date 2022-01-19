@@ -1,12 +1,49 @@
-{
-    "resolution": "1920x1080",
-    "timeOffsetToOpenAndCloseChestModal": 5,
-    "clickOffsetToRequest": 3,
-    "mouseTravellingInterval": 0.4,
-    "workTimeInSec": 300,
-    "restTimeInSec": 600,
+{    
+    "resolution": "1366x768(Brave)",    
+    "options": ["1366x768(Brave)", "1920x1080(Brave)", "1920x1080(LC)"],
+    "mode": 1,
+    "_comment": "mode = 1 (AutoFarm) | mode = 2 (Keep game opened)",    
+    "timeOffsetToOpenAndCloseChestModal": 25,
+    "clickOffsetToRequest": 2,
+    "mouseTravellingInterval": 0.2,
+    "workTimeInSec": 600,
+    "restTimeInSec": 1200,
     
-    "1920x1080": {
+    "1920x1080(LC)": {
+        "openChestModalCoord": {
+            "x": 1340,
+            "y": 200
+        },
+        "closeChestModalCoord":{
+            "x": 1228,
+            "y": 279
+        },
+        "treasureHuntModeCoord": {
+            "x": 973,
+            "y": 452
+        },
+        "heroesButtonCoord": {
+            "x": 1374,
+            "y": 693
+        },
+        "workAllHeroesCoord": {
+            "x": 875,
+            "y": 323
+        },
+        "restAllHeroesCoord": {
+            "x": 940,
+            "y": 320
+        },
+        "closeHeroesModalCoord": {
+            "x": 1228,
+            "y": 279
+        },
+        "goBackwardButtonCood": {
+            "x": 527,
+            "y": 198
+        }
+    },
+    "1920x1080(Brave)": {
         "openChestModalCoord": {
             "x": 1409,
             "y": 193
@@ -40,7 +77,7 @@
             "y": 187
         }
     },
-    "1366x768": {
+    "1366x768(Brave)": {
         "openChestModalCoord": {
             "x": 1047,
             "y": 143
