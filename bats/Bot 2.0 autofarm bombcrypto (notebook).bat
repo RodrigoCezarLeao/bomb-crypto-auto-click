@@ -2,5 +2,5 @@ cd "C:\Users\rodrigo.leao\Dropbox\Bomb Crypto\Auto Click Pessoal - Bombcrypto\bo
 color 0A
 chcp 65001
 cls
-python script.py
+python "script - v2.0.py"
 cmd

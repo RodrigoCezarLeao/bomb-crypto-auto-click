@@ -1,8 +1,7 @@
 bat p facilitar iniciação do macro
 add opção de deixar só o macro aberto
 formatar numeros de horas para 2 casas
-__________________________________________
-
+pegar coordenadas mais fáceis dos pontos
 expandir o macro p logar no jogo sozinho
 	executar um .exe no windows:
 	
@@ -15,5 +14,12 @@ expandir o macro p logar no jogo sozinho
 	import webbrowser
 	webbrowser.open(url, new=1)
 
+parametrizar macro de logar sozinho
+inicializar cmd minimizado/melhorar acesso às infos de log do cmd
+colocar modo descanso para entrar e sair do mapa atual (att as staminas)
+pausar execução
+criptografia basica na senha/pedir para inserir a senha na mão no início do programa
+__________________________________________
 
-relatório às 00:00 salvando qntd bcoin num arquivo
+notificações via alert (manter sempre na tela visível) (tkinter)
+

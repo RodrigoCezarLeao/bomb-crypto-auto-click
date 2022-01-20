@@ -2,12 +2,13 @@
     "resolution": "1366x768(Brave)",    
     "options": ["1366x768(Brave)", "1920x1080(Brave)", "1920x1080(LC)"],
     "mode": 1,
-    "_comment": "mode = 1 (AutoFarm) | mode = 2 (Keep game opened)",    
-    "timeOffsetToOpenAndCloseChestModal": 25,
-    "clickOffsetToRequest": 2,
+    "_comment": "mode = 1 (AutoFarm) | mode = 2 (Keep game opened) | mode = 3 (Open the game automatically)",    
+    "timeOffsetToOpenAndCloseChestModal": 3,
+    "clickOffsetToRequest": 3,
     "mouseTravellingInterval": 0.2,
     "workTimeInSec": 600,
     "restTimeInSec": 1200,
+    "browserPath": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
     
     "1920x1080(LC)": {
         "openChestModalCoord": {

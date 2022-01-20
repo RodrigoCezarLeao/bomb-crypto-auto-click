@@ -5,8 +5,10 @@ import json
 import pyautogui as pt
 from time import sleep, time, gmtime
 from threading import Timer
-from os import system
+from os import system, startfile
 import sys
+import webbrowser
+import keyboard
 
 #resolution = sys.argv[1]
 
@@ -83,7 +85,7 @@ def keepMapOpened():
     
     pt.moveTo(openX,openY, mouseTravellingInterval)
     pt.click()
-    sleep(sleepTime)
+    sleep(sleepTime/8)
 
     pt.moveTo(closeX,closeY, mouseTravellingInterval)
     pt.click()
@@ -165,6 +167,49 @@ def hubKeepGameOpened(t0, cont):
 
     return cont           
 
+def initializeGame():
+    browserPath = config["browserPath"]
+    startfile(f'"{browserPath}"')
+    
+    #acess game site
+    pt.moveTo(506, 60, 0.5)
+    pt.click()
+    sleep(1)
+    keyboard.write("bombcrypto.io")
+    sleep(1)
+    keyboard.press('enter')
+
+    #log into metamask
+    pt.moveTo(1768, 58, 0.5)
+    pt.click()
+    pt.moveTo(1446, 639, 7)
+    pt.click()
+    keyboard.write("RodCripto@97")
+    pt.moveTo(1540, 721, 0.5)
+    pt.click()
+
+    #close metamask extension
+    pt.moveTo(1320, 262, 0.5)
+    pt.click()    
+
+    #open game tab    
+    pt.moveTo(1484, 122, 0.5)
+    pt.click()    
+
+    #start game
+    pt.moveTo(973, 748, 7)
+    pt.click()
+
+    #confirm metamask connection
+    pt.moveTo(1857, 720, 7)
+    pt.click()
+    sleep(2)
+    pt.click()
+    sleep(7)
+    pt.click()
+
+    sleep(10)
+    
     
 
 t0 = time()
@@ -174,3 +219,7 @@ while(True):
         cont = hubAutoFarm(cont)
     elif (mode == 2):
         cont = hubKeepGameOpened(t0, cont)
+    elif (mode == 3):
+        initializeGame()
+        cont = hubAutoFarm(cont)
+        config["mode"] = 1
