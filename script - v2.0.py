@@ -45,14 +45,26 @@ def pressKey(keyCombination, timeToWait):
 
 def totalExecutionTime(t0):
     timeObj = gmtime(time() - t0)
-    return f"Tempo total de execução: {(timeObj.tm_yday - 1):02d}:{timeObj.tm_hour:02d}:{timeObj.tm_min:02d}:{timeObj.tm_sec:02d}"
+    return f"\nTempo total de execução do bot: {(timeObj.tm_yday - 1):02d}:{timeObj.tm_hour:02d}:{timeObj.tm_min:02d}:{timeObj.tm_sec:02d}\n\n"
 
 def actionExecutionTime(t1, actionName, actionRep):
     timeObj = gmtime(time() - t1)
     action = config["remarks"][actionName]
+    actionOneTimeInSec = calculateFullTimeOfAStep(actionName)
+    actionOneTimeInSecObj = gmtime(actionOneTimeInSec)
     actionFullTimeInSec = calculateFullTimeOfAStep(actionName) * actionRep
     actionTimeObj = gmtime(actionFullTimeInSec)
-    return f"Tempo de '{action}': {(timeObj.tm_yday - 1):02d}:{timeObj.tm_hour:02d}:{timeObj.tm_min:02d}:{timeObj.tm_sec:02d} / {(actionTimeObj.tm_yday - 1):02d}:{actionTimeObj.tm_hour:02d}:{actionTimeObj.tm_min:02d}:{actionTimeObj.tm_sec:02d}"
+
+    str1 = f"Tempo estimado (sem pausas) de execução de '{action}' (x1): {(actionOneTimeInSecObj.tm_yday - 1):02d}:{actionOneTimeInSecObj.tm_hour:02d}:{actionOneTimeInSecObj.tm_min:02d}:{actionOneTimeInSecObj.tm_sec:02d}\n"
+    str2 = f"Quantidade de repetições: {actionRep}\n"
+    str3 = ""
+    str4 = f"Tempo real passado da ação atual até o momento: {(timeObj.tm_yday - 1):02d}:{timeObj.tm_hour:02d}:{timeObj.tm_min:02d}:{timeObj.tm_sec:02d}\n"
+
+    if(actionRep > 1):
+        str3 = f"Tempo estimado (sem pausas) total de execução de '{action}' (x{actionRep}): {(actionTimeObj.tm_yday - 1):02d}:{actionTimeObj.tm_hour:02d}:{actionTimeObj.tm_min:02d}:{actionTimeObj.tm_sec:02d}\n"
+        
+
+    return f"{str1}{str2}{str3}{str4}"
 
 def calculateFullTimeOfAStep(actionName):
     totalSeconds = 0
@@ -71,9 +83,9 @@ def calculateFullTimeOfAStep(actionName):
 
 
 def reportInfo(actionName, t0, t1, actionRep):
-    str1 = totalExecutionTime(t0)
-    str2 = actionExecutionTime(t1, actionName, actionRep)
     system("cls")
+    str1 = totalExecutionTime(t0)
+    str2 = actionExecutionTime(t1, actionName, actionRep)    
     message = f"Bombcrypto Autoclick Bot\n{str1}\n{str2}"
     #pymsgbox.alert(message)
     print(message)
@@ -153,6 +165,6 @@ config = json.load(fp)
 resolution = config["resolution"]
 keyboard.add_hotkey('ctrl+f1', pauseGame)
 
-metamaskPassword = pymsgbox.password('Insira sua senha da metamask', 'Senha')
+metamaskPassword = pymsgbox.password('Insira sua senha da metamask, caso não esteja no arquivo config', 'Senha')
 
 schema(metamaskPassword)
