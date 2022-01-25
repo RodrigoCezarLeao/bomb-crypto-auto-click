@@ -1,15 +1,21 @@
 {    
-    "resolution": "1366x768BRAVE-2.0",
+    "resolution": "1920x1080BRAVE-2.0",
     "options": ["1920x1080BRAVE-1.0", "1366x768BRAVE-1.0", "1920x1080BRAVE-2.0", "1366x768BRAVE-2.0"],
 
-    "schema": [        
+
+    "schema-closeGame": [{"rep": 1, "actions": [
+            {"action": "closeGame", "rep": 1}
+    ]}],
+
+
+    "schema": [
         {"rep": 1, "actions": [
             {"action": "initialize", "rep": 1}
         ]},
         {"rep": 1000, "actions": [
             {"action": "workAll", "rep": 2},
             {"action": "keepGameOpenedWorking", "rep": 5},
-            {"action": "restAll", "rep": 12}
+            {"action": "restAll", "rep": 15}
         ]}
     ],
     "schema-1.0": [
@@ -20,7 +26,7 @@
             {"action": "workAll", "rep": 1},
             {"action": "keepGameOpenedWorking", "rep": 15},
             {"action": "restAll", "rep": 1},
-            {"action": "keepGameOpenedResting", "rep": 30}
+            {"action": "keepGameOpenedResting", "rep": 32}
         ]}
     ],
     "remarks":{
@@ -28,10 +34,22 @@
         "workAll": "Acordar todos os heróis",
         "keepGameOpenedWorking": "Manter jogo ativo enquanto heróis trabalham",
         "keepGameOpenedResting": "Manter jogo ativo enquanto heróis descansam",
-        "restAll": "Descansar todos os heróis"
+        "restAll": "Descansar todos os heróis",
+        "closeGame": "Fechar jogo e limpar cache e histórico navegador"
     },
     
     "1920x1080BRAVE-2.0": {
+        "closeGame": [
+            {"type": "click", "waitTimeAfter": 1, "value": [50, 50], "remark": "entrar no navegador"},
+            {"type": "pressKey", "waitTimeAfter": 3, "value": "ctrl+h", "remark": "sair tela cheia"},
+            {"type": "click", "waitTimeAfter": 5, "value": [92, 316], "remark": "abrir limpar dados de navegação"},
+            {"type": "click", "waitTimeAfter": 5, "value": [1197, 822], "remark": "limpar histórico e cache"},
+            {"type": "click", "waitTimeAfter": 1, "value": [290, 18], "remark": "fechar abas"},
+            {"type": "click", "waitTimeAfter": 1, "value": [290, 18], "remark": "fechar abas"},
+            {"type": "click", "waitTimeAfter": 1, "value": [290, 18], "remark": "fechar abas"},
+            {"type": "click", "waitTimeAfter": 1, "value": [290, 18], "remark": "fechar abas"},
+            {"type": "click", "waitTimeAfter": 1, "value": [290, 18], "remark": "fechar abas"}
+        ],
         "initialize": [
             {"type": "openPath", "waitTimeAfter": 5, "value": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe", "remark": "abrir navegador" },
             {"type": "click", "waitTimeAfter": 0.5, "value": [1897,97], "remark": "fechar restaurar páginas navegador"},
@@ -64,8 +82,7 @@
             {"type": "click", "waitTimeAfter": 10, "value": [962, 849], "remark": "clicar em iniciar jogo"},
             {"type": "click", "waitTimeAfter": 10, "value": [1792, 705], "remark": "aceitar conexão metamask (1)"},
             {"type": "click", "waitTimeAfter": 1, "value": [80, 55], "remark": "clicar no botão de voltar do jogo"},
-            {"type": "click", "waitTimeAfter": 5, "value": [1798, 953], "remark": "clicar no botão de abrir os heróis"},
-            {"type": "click", "waitTimeAfter": 3, "value": [716, 281], "remark": "clicar no botão de colocar todos os heróis para trabalhar"},
+            {"type": "click", "waitTimeAfter": 5, "value": [1798, 953], "remark": "clicar no botão de abrir os heróis"},            
             {"type": "click", "waitTimeAfter": 3, "value": [825, 286], "remark": "clicar no botão de colocar todos os heróis para descansar"},
             {"type": "click", "waitTimeAfter": 1, "value": [966, 196], "remark": "clicar no botão de fechar modal de heróis"},
             {"type": "click", "waitTimeAfter": 20, "value": [971, 531], "remark": "clicar no botão de abrir modo treasure hunt"},
@@ -117,8 +134,7 @@
             {"type": "click", "waitTimeAfter": 10, "value": [708, 616], "remark": "clicar em iniciar jogo"},
             {"type": "click", "waitTimeAfter": 10, "value": [1292, 566], "remark": "aceitar conexão metamask (1)"},
             {"type": "click", "waitTimeAfter": 1, "value": [53, 35], "remark": "clicar no botão de voltar do jogo"},
-            {"type": "click", "waitTimeAfter": 5, "value": [1277,673], "remark": "clicar no botão de abrir os heróis"},
-            {"type": "click", "waitTimeAfter": 3, "value": [508,202], "remark": "clicar no botão de colocar todos os heróis para trabalhar"},
+            {"type": "click", "waitTimeAfter": 5, "value": [1277,673], "remark": "clicar no botão de abrir os heróis"},            
             {"type": "click", "waitTimeAfter": 3, "value": [581, 199], "remark": "clicar no botão de colocar todos os heróis para descansar"},
             {"type": "click", "waitTimeAfter": 1, "value": [689,139], "remark": "clicar no botão de fechar modal de heróis"},
             {"type": "click", "waitTimeAfter": 20, "value": [698,372], "remark": "clicar no botão de abrir modo treasure hunt"},

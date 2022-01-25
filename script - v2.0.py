@@ -34,7 +34,16 @@ def write(text, timeToWait):
 
 def pressKey(keyCombination, timeToWait):
     try:
-        keyboard.press(keyCombination)
+        multipleKeys = keyCombination.split("+")
+        if(len(multipleKeys) > 1):
+            key0 = multipleKeys[0]
+            key1 = multipleKeys[1]
+
+            pt.keyDown(key0)
+            pt.press(key1)
+            pt.keyUp(key0)
+        elif len(multipleKeys) == 1:
+            keyboard.press(keyCombination)
         wait(timeToWait)
     except:
         raise Exception(f"Erro ao pressionar tecla(s) '{keyCombination}'")

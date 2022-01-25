@@ -21,5 +21,19 @@ pausar execução
 criptografia basica na senha/pedir para inserir a senha na mão no início do programa
 __________________________________________
 
+
+Decidir como vai ser a forma de envio dos e-mails
+Configurar e-mail novo exclusivo para enviar notificações
+	valores de cripto moedas via e-mail (tecla de atalho) e frequência e limite de taxa
+
+
+Parar bot e fechar o game limpando a cache do navegador e fechando todas as abas (tecla de atalho)
+
+Incluir atalhos no bot para "email moedas" e "pegar coordenadas"
+
+
+reconfigurar os cliques para n sair da tela do mapa
 notificações via alert (manter sempre na tela visível) (tkinter)
+
+leitura de imagens via IA do saldo de bcoins
 
